@@ -38,9 +38,12 @@ namespace kotyk
         private void AddStudentButton_Click(object sender, EventArgs e)
         {
             AddStudentForm addStudentForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(addStudentForm);
-            addStudentForm.Show();
+            if (addStudentForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(addStudentForm);
+                addStudentForm.Show();
+            }
         }
 
         private void AddLecturerButton_Click(object sender, EventArgs e)
@@ -54,9 +57,12 @@ namespace kotyk
         private void AddCourseButton_Click(object sender, EventArgs e)
         {
             AddCourseForm addCourseForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(addCourseForm);
-            addCourseForm.Show();
+            if (addCourseForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(addCourseForm);
+                addCourseForm.Show();
+            }
         }
 
         private void AddGroupButton_Click(object sender, EventArgs e)

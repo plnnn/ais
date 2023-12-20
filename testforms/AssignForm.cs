@@ -38,25 +38,34 @@ namespace kotyk
         private void AssignLecturerToCourseButton_Click(object sender, EventArgs e)
         {
             AssignLecturerToCourseForm assignLecturerToCourseForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(assignLecturerToCourseForm);
-            assignLecturerToCourseForm.Show();
+            if (assignLecturerToCourseForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(assignLecturerToCourseForm);
+                assignLecturerToCourseForm.Show();
+            }
         }
 
         private void AssignGroupToStudentButton_Click(object sender, EventArgs e)
         {
             AssignGroupToStudentForm assignGroupToStudentForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(assignGroupToStudentForm);
-            assignGroupToStudentForm.Show();
+            if (assignGroupToStudentForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(assignGroupToStudentForm);
+                assignGroupToStudentForm.Show();
+            }
         }
 
         private void AssignCourseToGroupButton_Click(object sender, EventArgs e)
         {
             AssignCourseToGroupForm assignCourseToGroupForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(assignCourseToGroupForm);
-            assignCourseToGroupForm.Show();
+            if (assignCourseToGroupForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(assignCourseToGroupForm);
+                assignCourseToGroupForm.Show();
+            }
         }
     }
 }

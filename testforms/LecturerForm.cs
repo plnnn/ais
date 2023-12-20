@@ -30,9 +30,12 @@ namespace kotyk
         private void ManageGradesButton_Click(object sender, EventArgs e)
         {
             ChooseCourseForm chooseCourseForm = new(lecturer);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(chooseCourseForm);
-            chooseCourseForm.Show();
+            if (chooseCourseForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(chooseCourseForm);
+                chooseCourseForm.Show();
+            }
         }
     }
 }

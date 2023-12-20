@@ -26,12 +26,19 @@ namespace kotyk
             panelForms.Size = new Size(800, 450);
 
             DataTable grades = student.ViewGrades();
-            if (grades == null)
+            if (grades.Rows.Count == 0)
             {
                 Feedbacker errorHandler = new();
                 errorHandler.NoCoursesFoundForStudent();
+                return;
             }
             GradesGrid.DataSource = grades;
+        }
+
+        public bool Valid()
+        {
+            if (this.GradesGrid.Rows.Count == 0) return false;
+            return true;
         }
 
         private void BackButton_Click(object sender, EventArgs e)

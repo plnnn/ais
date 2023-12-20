@@ -38,33 +38,45 @@ namespace kotyk
         private void ViewStudentsButton_Click(object sender, EventArgs e)
         {
             ViewStudentsForm viewStudentsForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(viewStudentsForm);
-            viewStudentsForm.Show();
+            if (viewStudentsForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(viewStudentsForm);
+                viewStudentsForm.Show();
+            }
         }
 
         private void ViewLecturersButton_Click(object sender, EventArgs e)
         {
             ViewLecturersForm viewLecturersForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(viewLecturersForm);
-            viewLecturersForm.Show();
+            if (viewLecturersForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(viewLecturersForm);
+                viewLecturersForm.Show();
+            }
         }
 
         private void ViewCoursesButton_Click(object sender, EventArgs e)
         {
             ViewCoursesForm viewCoursesForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(viewCoursesForm);
-            viewCoursesForm.Show();
+            if (viewCoursesForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(viewCoursesForm);
+                viewCoursesForm.Show();
+            }
         }
 
         private void ViewGroupsButton_Click(object sender, EventArgs e)
         {
             ViewGroupsForm viewGroupsForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(viewGroupsForm);
-            viewGroupsForm.Show();
+            if (viewGroupsForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(viewGroupsForm);
+                viewGroupsForm.Show();
+            }
         }
     }
 }

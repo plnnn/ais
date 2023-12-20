@@ -35,10 +35,17 @@ namespace kotyk
             {
                 Feedbacker errorHandler = new();
                 errorHandler.NoGroupsForCourse(course);
+                return;
             }
             this.ChooseGroupBox.DataSource = groups;
             this.ChooseGroupBox.DisplayMember = "code";
             this.ChooseGroupBox.ValueMember = "ID";
+        }
+
+        public bool Valid()
+        {
+            if (this.ChooseGroupBox.Items.Count == 0) return false;
+            return true;
         }
 
         private void ChooseGroupButton_Click(object sender, EventArgs e)
@@ -46,9 +53,12 @@ namespace kotyk
             Group selectedGroup = (Group)ChooseGroupBox.SelectedItem;
 
             AddGradeForm addGradeForm = new(lecturer, course, selectedGroup);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(addGradeForm);
-            addGradeForm.Show();
+            if (addGradeForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(addGradeForm);
+                addGradeForm.Show();
+            }
         }
 
         private void BackButton_Click(object sender, EventArgs e)

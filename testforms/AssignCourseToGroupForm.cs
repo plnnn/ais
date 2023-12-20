@@ -31,6 +31,7 @@ namespace kotyk
             if (courses.Count == 0)
             {
                 errorHandler.NoCourses();
+                return;
             }
             this.ChooseCourseBox.DataSource = courses;
             this.ChooseCourseBox.DisplayMember = "name";
@@ -40,10 +41,18 @@ namespace kotyk
             if (groups.Count == 0)
             {
                 errorHandler.NoGroups();
+                return;
             }
             this.ChooseGroupBox.DataSource = groups;
             this.ChooseGroupBox.DisplayMember = "code";
             this.ChooseGroupBox.ValueMember = "ID";
+        }
+
+        public bool Valid()
+        {
+            if (this.ChooseCourseBox.Items.Count == 0) return false;
+            if (this.ChooseGroupBox.Items.Count == 0) return false;
+            return true;
         }
 
         private void BackButton_Click(object sender, EventArgs e)

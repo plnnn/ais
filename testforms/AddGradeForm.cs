@@ -35,6 +35,7 @@ namespace kotyk
             {
                 Feedbacker errorHandler = new();
                 errorHandler.NoGradesForCourseAndGroup(course, group);
+                return;
             }
             GradesGrid.DataSource = grades;
             GradesGrid.ReadOnly = false;
@@ -50,6 +51,12 @@ namespace kotyk
             panelForms.Controls.Clear();
             panelForms.Controls.Add(ChooseGroupForm);
             ChooseGroupForm.Show();
+        }
+
+        public bool Valid()
+        {
+            if (this.GradesGrid.Rows.Count == 0) return false;
+            return true;
         }
 
         private void GradesGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)

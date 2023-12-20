@@ -31,10 +31,17 @@ namespace kotyk
             {
                 Feedbacker errorHandler = new();
                 errorHandler.NoStudents();
+                return;
             }
             this.ChooseStudentBox.DataSource = students;
             this.ChooseStudentBox.DisplayMember = "surname";
             this.ChooseStudentBox.ValueMember = "ID";
+        }
+
+        public bool Valid()
+        {
+            if (this.ChooseStudentBox.Items.Count == 0) return false;
+            return true;
         }
         
         private void BackButton_Click(object sender, EventArgs e)

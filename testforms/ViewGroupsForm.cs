@@ -27,13 +27,20 @@ namespace kotyk
 
             dbPrinter dbPrinter = new dbPrinter();
             List<Group> groups = dbPrinter.PrintGroups();
-            if (groups == null)
+            if (groups.Count == 0)
             {
                 Feedbacker errorHandler = new();
                 errorHandler.NoGroups();
+                return;
             }
             GroupsGrid.AutoGenerateColumns = true;
             GroupsGrid.DataSource = groups;
+        }
+
+        public bool Valid()
+        {
+            if (this.GroupsGrid.Rows.Count == 0) return false;
+            return true;
         }
 
         private void BackButton_Click(object sender, EventArgs e)

@@ -27,13 +27,20 @@ namespace kotyk
 
             dbPrinter dbPrinter = new dbPrinter();
             List<Course> courses = dbPrinter.PrintCourses();
-            if (courses == null)
+            if (courses.Count == 0)
             {
                 Feedbacker errorHandler = new();
                 errorHandler.NoCourses();
+                return;
             }
             CoursesGrid.AutoGenerateColumns = true;
             CoursesGrid.DataSource = courses;
+        }
+
+        public bool Valid()
+        {
+            if (this.CoursesGrid.Rows.Count == 0) return false;
+            return true;
         }
 
         private void BackButton_Click(object sender, EventArgs e)

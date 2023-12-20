@@ -30,9 +30,12 @@ namespace kotyk
         private void ViewGradesButton_Click(object sender, EventArgs e)
         {
             ViewGradesForm viewGradesForm = new(student);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(viewGradesForm);
-            viewGradesForm.Show();
+            if (viewGradesForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(viewGradesForm);
+                viewGradesForm.Show();
+            }
         }
     }
 }
