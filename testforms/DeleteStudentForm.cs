@@ -59,9 +59,13 @@ namespace kotyk
             administrator.DelStudent(selectedStudent);
 
             DeleteStudentForm deleteStudentForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(deleteStudentForm);
-            deleteStudentForm.Show();
+            if (deleteStudentForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(deleteStudentForm);
+                deleteStudentForm.Show();
+            }
+            else BackButton_Click(sender, e);
         }
     }
 }

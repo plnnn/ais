@@ -30,7 +30,7 @@ namespace kotyk
             if (courses.Count == 0)
             {
                 Feedbacker errorHandler = new();
-                errorHandler.NoLecturers();
+                errorHandler.NoCourses();
                 return;
             }
             this.ChooseCourseBox.DataSource = courses;
@@ -59,9 +59,13 @@ namespace kotyk
             administrator.DelCourse(selectedCourse);
 
             DeleteCourseForm deleteCourseForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(deleteCourseForm);
-            deleteCourseForm.Show();
+            if (deleteCourseForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(deleteCourseForm);
+                deleteCourseForm.Show();
+            }
+            else BackButton_Click(sender, e);
         }
     }
 }

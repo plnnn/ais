@@ -59,9 +59,13 @@ namespace kotyk
             administrator.DelLecturer(selectedLecturer);
 
             DeleteLecturerForm deleteLecturerForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(deleteLecturerForm);
-            deleteLecturerForm.Show();
+            if (deleteLecturerForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(deleteLecturerForm);
+                deleteLecturerForm.Show();
+            }
+            else BackButton_Click(sender, e);
         }
     }
 }

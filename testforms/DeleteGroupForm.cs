@@ -30,7 +30,7 @@ namespace kotyk
             if (groups.Count == 0)
             {
                 Feedbacker errorHandler = new();
-                errorHandler.NoLecturers();
+                errorHandler.NoGroups();
                 return;
             }
             this.ChooseGroupBox.DataSource = groups;
@@ -59,9 +59,13 @@ namespace kotyk
             administrator.DelGroup(selectedGroup);
 
             DeleteGroupForm deleteGroupForm = new(administrator);
-            panelForms.Controls.Clear();
-            panelForms.Controls.Add(deleteGroupForm);
-            deleteGroupForm.Show();
+            if (deleteGroupForm.Valid())
+            {
+                panelForms.Controls.Clear();
+                panelForms.Controls.Add(deleteGroupForm);
+                deleteGroupForm.Show();
+            }
+            else BackButton_Click(sender, e);
         }
     }
 }
