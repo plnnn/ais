@@ -20,12 +20,6 @@ namespace bebra
             this.groupID = groupID;
         }
 
-        public Student(User user, string groupID)
-            : base(user.getID(), user.getUsername(), user.getPassword(), user.getName(), user.getSurname())
-        {
-            this.groupID = groupID;
-        }
-
         public string getGroupID() { return groupID;}
 
         public DataTable ViewGrades()
