@@ -1,5 +1,4 @@
-﻿using kotyk.Classes.FunctionClasses;
-using MySqlX.XDevAPI.Relational;
+﻿using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Crypto.Parameters;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kotyk.Classes.dbObjects
+namespace kotyk.Classes
 {
     public class Student : User
     {

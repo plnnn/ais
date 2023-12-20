@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bebra
+namespace kotyk.Classes
 {
     public class dbConnector
     {
@@ -16,10 +16,10 @@ namespace bebra
 
         public dbConnector()
         {
-            this.server = "localhost";
-            this.database = "ais";
-            this.username = "root";
-            this.password = "";
+            server = "localhost";
+            database = "ais";
+            username = "root";
+            password = "";
         }
 
         public string GetConString()

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using kotyk;
 
-namespace bebra
+namespace kotyk.Classes
 {
     public class Administrator : User
     {
@@ -105,7 +104,7 @@ namespace bebra
                 QueriesHandler QueriesHandler = new();
                 QueriesHandler.AssignCourseToGroupQuery(course, group);
             }
-            
+
         }
     }
 }

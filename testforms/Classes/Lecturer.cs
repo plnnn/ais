@@ -4,9 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using kotyk.Classes.FunctionClasses;
 
-namespace kotyk.Classes.dbObjects
+namespace kotyk.Classes
 {
     public class Lecturer : User
     {

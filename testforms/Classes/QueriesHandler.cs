@@ -1,5 +1,4 @@
-﻿using kotyk.Classes.dbObjects;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Tls;
@@ -16,7 +15,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 
-namespace kotyk.Classes.FunctionClasses
+namespace kotyk.Classes
 {
     public class QueriesHandler
     {

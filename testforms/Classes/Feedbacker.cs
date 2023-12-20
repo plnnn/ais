@@ -1,5 +1,4 @@
-﻿using kotyk.Classes.dbObjects;
-using Org.BouncyCastle.Crypto.Agreement;
+﻿using Org.BouncyCastle.Crypto.Agreement;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kotyk.Classes.FunctionClasses
+namespace kotyk.Classes
 {
     public class Feedbacker
     {

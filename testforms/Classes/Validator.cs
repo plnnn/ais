@@ -1,5 +1,4 @@
-﻿using kotyk.Classes.dbObjects;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace kotyk.Classes.FunctionClasses
+namespace kotyk.Classes
 {
     public class Validator
     {

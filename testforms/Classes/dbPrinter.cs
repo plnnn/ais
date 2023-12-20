@@ -3,9 +3,8 @@ using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using System.Data;
 using System.Web;
-using kotyk.Classes.dbObjects;
 
-namespace kotyk.Classes.FunctionClasses
+namespace kotyk.Classes
 {
     public class dbPrinter
     {

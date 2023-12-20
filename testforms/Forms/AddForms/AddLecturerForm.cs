@@ -1,5 +1,4 @@
-﻿using kotyk.Classes.dbObjects;
-using kotyk.Classes.FunctionClasses;
+﻿using kotyk.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
